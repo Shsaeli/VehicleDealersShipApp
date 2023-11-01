@@ -35,7 +35,7 @@ public class Dealership {
     }
 
     //Constructor
-    public Dealership(String name, String address, String phone) {
+    public Dealership() {
         this.name = name;
         this.address = address;
         this.phone = phone;
