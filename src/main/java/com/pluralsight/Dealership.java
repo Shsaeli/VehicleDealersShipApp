@@ -41,6 +41,13 @@ public class Dealership {
         this.phone = phone;
         this.inventory = s;
     }
+    public Dealership()
+    {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.inventory = inventory;
+    }
 
     public List<Vehicle> getVehiclesByprice(double max, double min) {
         return null;
