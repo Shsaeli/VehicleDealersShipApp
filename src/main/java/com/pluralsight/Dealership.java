@@ -33,6 +33,14 @@ public class Dealership {
         this.phone = phone;
     }
 
+    public void setInventory(ArrayList<Vehicle> inventory) {
+        this.inventory = inventory;
+    }
+
+    public ArrayList<Vehicle> getInventory() {
+        return inventory;
+    }
+
     //Constructor
     public Dealership(String name, String address, String phone, ArrayList<Vehicle> s) {
         this.name = name;
@@ -42,10 +50,14 @@ public class Dealership {
     }
     public Dealership()
     {
+
+    }
+
+    public Dealership(String name, String address, String phone)
+    {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.inventory = inventory;
     }
 
     public List<Vehicle> getVehiclesByprice(double max, double min) {
