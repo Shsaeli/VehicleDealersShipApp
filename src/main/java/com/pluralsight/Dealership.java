@@ -35,10 +35,11 @@ public class Dealership {
     }
 
     //Constructor
-    public Dealership() {
+    public Dealership(String name, String address, String phone, ArrayList<Vehicle> s) {
         this.name = name;
         this.address = address;
         this.phone = phone;
+        this.inventory = s;
     }
 
     public List<Vehicle> getVehiclesByprice(double max, double min) {
