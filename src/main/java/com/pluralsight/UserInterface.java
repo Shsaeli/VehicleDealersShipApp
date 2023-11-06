@@ -1,15 +1,20 @@
 package com.pluralsight;
 
+import javax.lang.model.type.ArrayType;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
     Scanner scanner = new Scanner(System.in);
     Dealership dealership;
 
-    UserInterface(Dealership d)
+    UserInterface()
     {
-     this.dealership = d;
+
     }
+
+
     public void display()
     {
      init();
@@ -31,9 +36,8 @@ public class UserInterface {
        {
         case 1-> processAddVehicleRequest();
         case 2-> processRemoveVehicleRequest();
-        case 3-> displayVehicles();
+        case 3-> processAllVehiclesRequest();
         case 4-> System.exit(0);
-        case 5-> processGetByColorRequest();
         default -> System.out.println("Please re-enter valid input.");
        }
 
@@ -47,10 +51,9 @@ public class UserInterface {
     private void init()
     {
      DealershipFileManager manager = new DealershipFileManager();
-     Dealership d1 = manager.getDealership();
-     UserInterface showDealership = new UserInterface(d1);
+        dealership = manager.getDealership();
     }
-    private void displayVehicles()
+    private void displayVehicles(ArrayList<Vehicle> listsOfVehicles)
     {
         while(true)
         {
@@ -68,24 +71,39 @@ public class UserInterface {
                     """);
 
             int ans = scanner.nextInt();
-            while(true)
-            {
+
                 switch (ans)
                 {
-                    case 1-> processAllVehiclesRequest();
-                    case 2-> processGetByPriceRequest();
-                    case 3-> processGetByMakeModelRequest();
-                    case 4-> processGetByYearRequest();
-                    case 5-> processGetByColorRequest();
-                    case 6-> processGetByMileageRequest();
-                    case 7-> processGetByVehicleType();
-                    case 8 -> {
-                        return;
-                    }
-                    default -> System.out.println("Please re- enter the valid input: ");
+                    case 1: processGetAllVehiclesRequest();
+                    break;
+                    case 2: processGetByPriceRequest();
+                    break;
+                    case 3: processGetByMakeModelRequest();
+                    break;
+                    case 4: processGetByYearRequest();
+                    break;
+                    case 5: processGetByColorRequest();
+                    break;
+                    case 6: processGetByMileageRequest();
+                    break;
+                    case 7: processGetByVehicleType();
+                    break;
+
+
+                    default: System.out.println("Please re-enter the valid input: ");
+                    break;
                 }
             }
         }
+
+    private void processGetAllVehiclesRequest() {
+     ArrayList<Vehicle> showListOfVehicles = this.dealership.getAllVehicles();
+     for(Vehicle vehicle: showListOfVehicles)
+     {
+         System.out.println("Make: "+ vehicle.getMake()+ "Type: "+ vehicle.getVehicleType());
+     }
+
+
     }
 
     private void processGetByMileageRequest() {
@@ -93,7 +111,7 @@ public class UserInterface {
 
     private void processGetByVehicleType() {
     }
-    
+
 
     private void processGetByColorRequest() {
     }
@@ -110,6 +128,7 @@ public class UserInterface {
 
     private void processAllVehiclesRequest ()
     {
+        displayVehicles(dealership.getAllVehicles());
 
     }
    public void processAddVehicleRequest()

@@ -60,7 +60,7 @@ public class Dealership {
         this.phone = phone;
     }
 
-    public List<Vehicle> getVehiclesByprice(double max, double min) {
+    public List<Vehicle> getVehiclesByPrice(double max, double min) {
         return null;
     }
 
@@ -86,7 +86,7 @@ public class Dealership {
 
     public ArrayList<Vehicle> getAllVehicles() {
 
-        return null;
+        return this.getInventory();
     }
 
     public void addVehicle() {

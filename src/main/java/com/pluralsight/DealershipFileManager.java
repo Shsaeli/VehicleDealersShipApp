@@ -26,6 +26,8 @@ public class DealershipFileManager {
             }
             d = new Dealership(dealershipInfo[0],dealershipInfo[1],dealershipInfo[2], ListOfVehicle);
 
+            bufferedReader.close();
+
 
         } catch (Exception e) {
             e.printStackTrace();
