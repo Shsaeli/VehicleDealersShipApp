@@ -11,6 +11,13 @@ public class Vehicle {
     int odometer;
     double price;
 
+
+    public void addVehicle(Vehicle newVehicle) {
+
+        this.inventory.add(newVehicle);
+    }
+
+
     public int getVin() {
         return vin;
     }
