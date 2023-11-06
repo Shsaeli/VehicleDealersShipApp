@@ -1,4 +1,3 @@
-
 package com.pluralsight;
 
 import org.junit.jupiter.api.Test;
@@ -19,5 +18,4 @@ class DealershipTest {
 
         assertEquals("Shsaeli Organization", name);
     }
-
 }
