@@ -1,7 +1,6 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Dealership {
     private String name;
@@ -60,40 +59,98 @@ public class Dealership {
         this.phone = phone;
     }
 
-    public List<Vehicle> getVehiclesByprice(double max, double min) {
-        return null;
+    public ArrayList<Vehicle> getVehiclesByPrice(double max, double min) {
+        ArrayList<Vehicle> res = new ArrayList<>();
+        for(Vehicle v: getInventory())
+        {
+            if(v.getPrice()>=min && v.getPrice()<=max)
+            {
+                res.add(v);
+            }
+        }
+        return res;
     }
 
-    public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
-        return null;
+    public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model) {
+        ArrayList<Vehicle> res = new ArrayList<>();
+        for(Vehicle v: getInventory())
+        {
+            if(make.equals(v.getMake()) && model.equals(v.getModel()))
+            {
+                res.add(v);
+            }
+        }
+        return res;
     }
 
-    public ArrayList<Vehicle> getVehiclesByYear(String min, String max) {
-        return null;
+    public ArrayList<Vehicle> getVehiclesByYear(int min, int max) {
+        ArrayList<Vehicle> res = new ArrayList<>();
+        for(Vehicle v: getInventory())
+        {
+            if(v.year>=min && v.year<=max)
+            {
+                res.add(v);
+            }
+        }
+        return res;
     }
 
     public ArrayList<Vehicle> getVehiclesByColor(String color) {
-        return null;
+        ArrayList<Vehicle> res = new ArrayList<>();
+        for(Vehicle v: getInventory())
+        {
+            if(v.getColor().equals(color))
+            {
+                res.add(v);
+            }
+        }
+        return res;
     }
 
     public ArrayList<Vehicle> getVehiclesByMileage(int min, int max) {
-        return null;
+        ArrayList<Vehicle> res = new ArrayList<>();
+        for(Vehicle v: getInventory())
+        {
+            if(v.getOdometer()>= min && v.getOdometer()<=max)
+            {
+                res.add(v);
+            }
+        }
+        return res;
     }
 
     public ArrayList<Vehicle> getVehiclesByType(String vehicleType) {
-        return null;
+        
+        ArrayList<Vehicle> res = new ArrayList<>();
+        for(Vehicle v: getInventory())
+        {
+            if(v.getVehicleType().equals(vehicleType))
+            {
+                res.add(v);
+            }
+        }
+        return res;
     }
 
     public ArrayList<Vehicle> getAllVehicles() {
 
-        return null;
+        return this.getInventory();
     }
 
-    public void addVehicle() {
+    public void addVehicle(int Vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
+       Vehicle newVehicle = new Vehicle(Vin, year, make, model, vehicleType, color, odometer, price);
+       this.getInventory().add(newVehicle);
+
 
     }
 
     public void removeVehicle(Vehicle b) {
+        if (vehicle == null){
+            return;
+        }
+        int index = dealership.inventory.indexOf(vehicle);
+        if(index) >= 0){
+        dealership.inventory.remove(i)
 
     }
 }

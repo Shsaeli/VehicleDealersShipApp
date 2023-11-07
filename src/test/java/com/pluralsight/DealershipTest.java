@@ -6,8 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DealershipTest {
     @Test
-    void Dealership_ConstructorFunctionality_ReturnObject()
-    {
+    void Dealership_ConstructorFunctionality_ReturnObject() {
         //Arrange
 
         Dealership d = new Dealership("Shsaeli Organization", "New York NY", "777-999-7654");
@@ -19,5 +18,4 @@ class DealershipTest {
 
         assertEquals("Shsaeli Organization", name);
     }
-
 }

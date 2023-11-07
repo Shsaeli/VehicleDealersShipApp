@@ -2,6 +2,7 @@ package com.pluralsight;
 
 public class Application {
         public static void main(String[] args) {
-            System.out.println("Hello world!");
+         UserInterface ourUIScreen = new UserInterface();
+         ourUIScreen.display();
         }
 }

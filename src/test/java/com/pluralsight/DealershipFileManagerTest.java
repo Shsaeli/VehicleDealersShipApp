@@ -7,8 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class DealershipFileManagerTest {
 
     @Test
-    void getDealership_ReadCsv_InfoFromCsv()
-    {
+    void getDealership_ReadCsv_InfoFromCsv() {
         DealershipFileManager m = new DealershipFileManager();
         Dealership d1 = m.getDealership();
 
@@ -21,5 +20,4 @@ class DealershipFileManagerTest {
         assertEquals(995.00, d1.getInventory().get(0).getPrice());
         assertEquals(6995.00, d1.getInventory().get(2).getPrice());
     }
-
 }
